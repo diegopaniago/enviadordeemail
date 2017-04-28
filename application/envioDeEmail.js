@@ -1,10 +1,12 @@
 var nodemailer = require('nodemailer');
 var MailOptions = require('../domain/mailOptions');
 
-function EnvioDeEmail(smtp, options){
+function EnvioDeEmail(options){
 	var self = {};
 	
-	var transporter = nodemailer.createTransport(smtp);
+	self.servidorSmtp = "smtps://nargsemcasa@gmail.com:@25pde92@smtp.gmail.com";
+	
+	var transporter = nodemailer.createTransport(self.servidorSmtp);
  
 	var mailOptions = new MailOptions(options);
 
